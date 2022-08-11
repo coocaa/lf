@@ -1,0 +1,122 @@
+2022-08-09 10:16:38,284 log_control.py[line:65]-[INFO]: fefefa
+2022-08-09 19:51:12,000 conftest.py[line:93]-[INFO]: 用例总数: 0
+2022-08-09 19:51:12,000 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:51:12,000 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:51:12,000 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:51:12,000 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:51:12,000 conftest.py[line:98]-[INFO]: 用例执行时长: 1.51 s
+2022-08-09 19:51:12,001 conftest.py[line:104]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:53:17,673 conftest.py[line:93]-[INFO]: 用例总数: 0
+2022-08-09 19:53:17,673 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:53:17,673 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:53:17,674 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:53:17,674 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:53:17,674 conftest.py[line:98]-[INFO]: 用例执行时长: 0.55 s
+2022-08-09 19:53:17,674 conftest.py[line:104]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:53:32,946 conftest.py[line:93]-[INFO]: 用例总数: 2
+2022-08-09 19:53:32,946 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:53:32,946 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:53:32,946 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:53:32,947 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:53:32,947 conftest.py[line:98]-[INFO]: 用例执行时长: 0.82 s
+2022-08-09 19:53:32,947 conftest.py[line:102]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:53:51,678 conftest.py[line:93]-[INFO]: 用例总数: 2
+2022-08-09 19:53:51,678 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:53:51,678 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:53:51,678 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:53:51,678 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:53:51,678 conftest.py[line:98]-[INFO]: 用例执行时长: 0.70 s
+2022-08-09 19:53:51,678 conftest.py[line:102]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:53:59,673 conftest.py[line:93]-[INFO]: 用例总数: 2
+2022-08-09 19:53:59,674 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:53:59,674 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:53:59,674 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:53:59,674 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:53:59,674 conftest.py[line:98]-[INFO]: 用例执行时长: 1.29 s
+2022-08-09 19:53:59,674 conftest.py[line:102]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:57:07,550 conftest.py[line:93]-[INFO]: 用例总数: 2
+2022-08-09 19:57:07,550 conftest.py[line:94]-[INFO]: 通过用例数: 0
+2022-08-09 19:57:07,550 conftest.py[line:95]-[ERROR]: 异常用例数: 2
+2022-08-09 19:57:07,550 conftest.py[line:96]-[ERROR]: 失败用例数: 0
+2022-08-09 19:57:07,551 conftest.py[line:97]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:57:07,551 conftest.py[line:98]-[INFO]: 用例执行时长: 1.07 s
+2022-08-09 19:57:07,551 conftest.py[line:102]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:57:43,355 conftest.py[line:95]-[INFO]: 用例总数: 2
+2022-08-09 19:57:43,356 conftest.py[line:96]-[INFO]: 通过用例数: 0
+2022-08-09 19:57:43,356 conftest.py[line:97]-[ERROR]: 异常用例数: 2
+2022-08-09 19:57:43,356 conftest.py[line:98]-[ERROR]: 失败用例数: 0
+2022-08-09 19:57:43,356 conftest.py[line:99]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:57:43,356 conftest.py[line:100]-[INFO]: 用例执行时长: 1.08 s
+2022-08-09 19:57:43,357 conftest.py[line:104]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 19:58:47,808 conftest.py[line:96]-[INFO]: 用例总数: 2
+2022-08-09 19:58:47,808 conftest.py[line:97]-[INFO]: 通过用例数: 0
+2022-08-09 19:58:47,809 conftest.py[line:98]-[ERROR]: 异常用例数: 2
+2022-08-09 19:58:47,809 conftest.py[line:99]-[ERROR]: 失败用例数: 0
+2022-08-09 19:58:47,809 conftest.py[line:100]-[WARNING]: 跳过用例数: 0
+2022-08-09 19:58:47,809 conftest.py[line:101]-[INFO]: 用例执行时长: 1.08 s
+2022-08-09 19:58:47,809 conftest.py[line:105]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 20:00:07,535 conftest.py[line:97]-[INFO]: 用例总数: 2
+2022-08-09 20:00:07,535 conftest.py[line:98]-[INFO]: 通过用例数: 0
+2022-08-09 20:00:07,535 conftest.py[line:99]-[ERROR]: 异常用例数: 2
+2022-08-09 20:00:07,535 conftest.py[line:100]-[ERROR]: 失败用例数: 0
+2022-08-09 20:00:07,535 conftest.py[line:101]-[WARNING]: 跳过用例数: 0
+2022-08-09 20:00:07,535 conftest.py[line:102]-[INFO]: 用例执行时长: 1.15 s
+2022-08-09 20:00:07,536 conftest.py[line:106]-[INFO]: 用例成功率: 0.00 %
+2022-08-09 20:00:44,368 log_decorator.py[line:35]-[INFO]: 
+===========================================================
+用例标题: 新增收藏网址接口
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json?name=%E8%87%AA%E5%8A%A8%E5%8C%9611&link=https%3A%2F%2Fgitee.com%2Fyu_xiao_qi%2Fpytest-auto-api2
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'cookie': '$cache{login_cookie}', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NTg4MjA3NjJ9.aOWQwL7chcwcFokYsc1y7PRh5khSWGeyWRVRKofg-h9eFagcDvJ-8w6XBjITW3wf2K3nWagUCvlOdkizH1JC0w', 'Content-Length': '0'}
+请求内容: {'params': {'name': '自动化11', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}}
+接口响应内容: {"errorCode":-1001,"errorMsg":"请先登录！"}
+接口响应时长: 312.73 ms
+Http状态码: 200
+==========================================================
+2022-08-09 20:00:45,253 log_decorator.py[line:35]-[INFO]: 
+===========================================================
+用例标题: 正常登录
+请求路径: https://www.wanandroid.com/user/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NTg4MjA3NjJ9.aOWQwL7chcwcFokYsc1y7PRh5khSWGeyWRVRKofg-h9eFagcDvJ-8w6XBjITW3wf2K3nWagUCvlOdkizH1JC0w', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: {'data': {'username': '18800000001', 'password': '123456'}}
+接口响应内容: {"data":{"admin":false,"chapterTops":[],"coinCount":3203,"collectIds":[-1,-1,-1,-1,21630,-1,-1,-1,-1,-1,22665,1165,19263,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],"email":"","icon":"","id":129462,"nickname":"18800000001","password":"","publicName":"18800000001","token":"","type":0,"username":"18800000001"},"errorCode":0,"errorMsg":""}
+接口响应时长: 876.7 ms
+Http状态码: 200
+==========================================================
+2022-08-09 20:00:45,276 conftest.py[line:97]-[INFO]: 用例总数: 2
+2022-08-09 20:00:45,276 conftest.py[line:98]-[INFO]: 通过用例数: 2
+2022-08-09 20:00:45,276 conftest.py[line:99]-[ERROR]: 异常用例数: 0
+2022-08-09 20:00:45,277 conftest.py[line:100]-[ERROR]: 失败用例数: 0
+2022-08-09 20:00:45,277 conftest.py[line:101]-[WARNING]: 跳过用例数: 0
+2022-08-09 20:00:45,278 conftest.py[line:102]-[INFO]: 用例执行时长: 2.17 s
+2022-08-09 20:00:45,278 conftest.py[line:106]-[INFO]: 用例成功率: 100.00 %
+2022-08-09 20:01:57,448 log_decorator.py[line:35]-[INFO]: 
+===========================================================
+用例标题: 新增收藏网址接口
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json?name=%E8%87%AA%E5%8A%A8%E5%8C%9611&link=https%3A%2F%2Fgitee.com%2Fyu_xiao_qi%2Fpytest-auto-api2
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'cookie': '$cache{login_cookie}', 'authorization': '', 'Content-Length': '0'}
+请求内容: {'params': {'name': '自动化11', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}}
+接口响应内容: {"errorCode":-1001,"errorMsg":"请先登录！"}
+接口响应时长: 353.63 ms
+Http状态码: 200
+==========================================================
+2022-08-09 20:01:58,826 log_decorator.py[line:35]-[INFO]: 
+===========================================================
+用例标题: 正常登录
+请求路径: https://www.wanandroid.com/user/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'authorization': '', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: {'data': {'username': '18800000001', 'password': '123456'}}
+接口响应内容: {"data":{"admin":false,"chapterTops":[],"coinCount":3203,"collectIds":[-1,-1,-1,-1,21630,-1,-1,-1,-1,-1,22665,1165,19263,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],"email":"","icon":"","id":129462,"nickname":"18800000001","password":"","publicName":"18800000001","token":"","type":0,"username":"18800000001"},"errorCode":0,"errorMsg":""}
+接口响应时长: 1366.13 ms
+Http状态码: 200
+==========================================================
+2022-08-09 20:01:58,850 conftest.py[line:94]-[INFO]: 用例总数: 2
+2022-08-09 20:01:58,851 conftest.py[line:95]-[INFO]: 通过用例数: 2
+2022-08-09 20:01:58,852 conftest.py[line:96]-[ERROR]: 异常用例数: 0
+2022-08-09 20:01:58,852 conftest.py[line:97]-[ERROR]: 失败用例数: 0
+2022-08-09 20:01:58,852 conftest.py[line:98]-[WARNING]: 跳过用例数: 0
+2022-08-09 20:01:58,852 conftest.py[line:99]-[INFO]: 用例执行时长: 2.70 s
+2022-08-09 20:01:58,853 conftest.py[line:103]-[INFO]: 用例成功率: 100.00 %

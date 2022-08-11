@@ -1,0 +1,533 @@
+2022-08-10 18:19:37,921 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:19:37,921 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:19:37,921 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:19:37,921 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:19:37,921 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:19:37,921 conftest.py[line:90]-[INFO]: 用例执行时长: 0.93 s
+2022-08-10 18:19:37,921 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:20:00,700 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:20:00,700 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:20:00,701 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:20:00,701 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:20:00,701 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:20:00,701 conftest.py[line:90]-[INFO]: 用例执行时长: 0.73 s
+2022-08-10 18:20:00,701 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:20:42,704 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:20:42,704 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:20:42,704 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:20:42,705 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:20:42,705 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:20:42,705 conftest.py[line:90]-[INFO]: 用例执行时长: 0.75 s
+2022-08-10 18:20:42,705 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:21:38,741 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:21:38,742 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:21:38,742 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:21:38,742 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:21:38,742 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:21:38,742 conftest.py[line:90]-[INFO]: 用例执行时长: 0.70 s
+2022-08-10 18:21:38,742 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:23:17,231 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:23:17,231 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:23:17,232 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:23:17,232 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:23:17,232 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:23:17,232 conftest.py[line:90]-[INFO]: 用例执行时长: 0.71 s
+2022-08-10 18:23:17,232 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:23:53,164 log_decorator.py[line:37]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjczMzJ9.jExE5S5aPVd7C7K6vycRID2JjmXr0IvIExF9pU7DO13XaonKkGd04PR2LBtl8MqVihIZyEd25EAZt1zLdM6Q9g', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372067.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 84.34 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:23:53,437 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:23:53,437 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:23:53,437 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:23:53,437 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:23:53,437 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:23:53,438 conftest.py[line:90]-[INFO]: 用例执行时长: 0.76 s
+2022-08-10 18:23:53,438 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:26:42,351 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc1MDF9.r13vCO6E1XBB-xBTtFNeT-bZEj8o-sIt3oRYOY-svz-ALAdJudXjUQ7OoMj40vXlM6YPF9f8sjyi96i3JYQ7YA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372077.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 71.08 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:26:42,630 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:26:42,631 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:26:42,631 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:26:42,631 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:26:42,631 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:26:42,631 conftest.py[line:90]-[INFO]: 用例执行时长: 0.74 s
+2022-08-10 18:26:42,631 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:27:13,960 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:27:13,960 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:27:13,960 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:27:13,960 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:27:13,960 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:27:13,960 conftest.py[line:90]-[INFO]: 用例执行时长: 0.69 s
+2022-08-10 18:27:13,960 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:28:56,747 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:28:56,748 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:28:56,748 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:28:56,748 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:28:56,748 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:28:56,748 conftest.py[line:90]-[INFO]: 用例执行时长: 0.67 s
+2022-08-10 18:28:56,748 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:29:16,478 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc2NTV9.XtaC9NLpgo_pM-jFM63stPCOLnkFC1tIY0VieHEaa-MzwC2WTC7cq5D37s0fCTurPtDBQeUz7f2PiDUeSHUJEw', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372107.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 91.31 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:29:16,741 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:29:16,741 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:29:16,742 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:29:16,742 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:29:16,742 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:29:16,742 conftest.py[line:90]-[INFO]: 用例执行时长: 0.75 s
+2022-08-10 18:29:16,742 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:29:58,080 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc2OTd9.AtNNq8Gedsy8L4t3VXmxkqJS7WkyoH-rbBYuUn0vf2zV-UzwNqC_09ee_bpIKGqs902B4TLGGbjFt9pq1yiADQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372117.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 84.71 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:29:58,080 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc2OTd9.AtNNq8Gedsy8L4t3VXmxkqJS7WkyoH-rbBYuUn0vf2zV-UzwNqC_09ee_bpIKGqs902B4TLGGbjFt9pq1yiADQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372117.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 84.71 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:29:58,096 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:29:58,096 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 18:29:58,096 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:29:58,096 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 18:29:58,096 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:29:58,096 conftest.py[line:90]-[INFO]: 用例执行时长: 0.56 s
+2022-08-10 18:29:58,096 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %
+2022-08-10 18:31:23,759 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc3ODN9.uSeNYNdVxNzCF5PR4GDNbKArbgTfqoA8ChzAykScSd2j766M5iUwKBmDkamLqa62xyZG5SaXrTeNbvsAmR-dag', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372127.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 63.02 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:31:23,759 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc3ODN9.uSeNYNdVxNzCF5PR4GDNbKArbgTfqoA8ChzAykScSd2j766M5iUwKBmDkamLqa62xyZG5SaXrTeNbvsAmR-dag', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372127.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 63.02 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:31:23,759 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc3ODN9.uSeNYNdVxNzCF5PR4GDNbKArbgTfqoA8ChzAykScSd2j766M5iUwKBmDkamLqa62xyZG5SaXrTeNbvsAmR-dag', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372127.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 63.02 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:31:23,761 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc3ODN9.uSeNYNdVxNzCF5PR4GDNbKArbgTfqoA8ChzAykScSd2j766M5iUwKBmDkamLqa62xyZG5SaXrTeNbvsAmR-dag', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372127.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 63.02 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:31:23,766 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:31:23,766 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 18:31:23,766 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:31:23,766 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 18:31:23,766 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:31:23,767 conftest.py[line:90]-[INFO]: 用例执行时长: 0.47 s
+2022-08-10 18:31:23,767 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %
+2022-08-10 18:33:33,690 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc5MTJ9.EEG2_DW-hzD6w-o5vZ3sYpG5XWT0aIjZWjrCrDxNmCuLpq-VOT7Rbmp0mdlZT3ylh7ZUTJzqCviS3J3dkLx3iA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372137.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 73.31 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:33:33,691 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc5MTJ9.EEG2_DW-hzD6w-o5vZ3sYpG5XWT0aIjZWjrCrDxNmCuLpq-VOT7Rbmp0mdlZT3ylh7ZUTJzqCviS3J3dkLx3iA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372137.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 73.31 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:33:33,691 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc5MTJ9.EEG2_DW-hzD6w-o5vZ3sYpG5XWT0aIjZWjrCrDxNmCuLpq-VOT7Rbmp0mdlZT3ylh7ZUTJzqCviS3J3dkLx3iA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372137.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 73.31 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:33:33,705 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjc5MTJ9.EEG2_DW-hzD6w-o5vZ3sYpG5XWT0aIjZWjrCrDxNmCuLpq-VOT7Rbmp0mdlZT3ylh7ZUTJzqCviS3J3dkLx3iA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372137.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 73.31 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:33:33,710 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:33:33,710 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 18:33:33,710 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:33:33,710 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 18:33:33,710 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:33:33,710 conftest.py[line:90]-[INFO]: 用例执行时长: 0.47 s
+2022-08-10 18:33:33,710 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %
+2022-08-10 18:34:50,894 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:34:50,894 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:34:50,894 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:34:50,894 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:34:50,894 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:34:50,894 conftest.py[line:90]-[INFO]: 用例执行时长: 0.71 s
+2022-08-10 18:34:50,894 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:35:09,126 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:35:09,127 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:35:09,127 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:35:09,127 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:35:09,127 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:35:09,127 conftest.py[line:90]-[INFO]: 用例执行时长: 0.79 s
+2022-08-10 18:35:09,127 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:35:28,233 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372157.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 18:40:27","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjgwMjd9.ub5Lcw3SyzAgEX-XfpmK7w2VcvfhKekquuRliXkyrKbZb2kuBTQrHIotwo5tEIAUUHFbh260AExd9ZfGHMwwDw"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 67.71 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:35:28,311 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjgwMjd9.ub5Lcw3SyzAgEX-XfpmK7w2VcvfhKekquuRliXkyrKbZb2kuBTQrHIotwo5tEIAUUHFbh260AExd9ZfGHMwwDw', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372167.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 75.19 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:35:28,617 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:35:28,617 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:35:28,618 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:35:28,618 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:35:28,618 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:35:28,618 conftest.py[line:90]-[INFO]: 用例执行时长: 0.79 s
+2022-08-10 18:35:28,618 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 18:54:36,169 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372167.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 18:59:35","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjkxNzV9.UVgdJCJlZQuNhJ6qGI6lJ6xkM67c4kjVLKbQqH8Cld6uwjfNRgb31agD-icF10G8dIu8NDU-u0EFdpoVz0r0xA"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 57.46 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:54:36,250 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMjkxNzV9.UVgdJCJlZQuNhJ6qGI6lJ6xkM67c4kjVLKbQqH8Cld6uwjfNRgb31agD-icF10G8dIu8NDU-u0EFdpoVz0r0xA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372177.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 76.0 ms
+Http状态码: 200
+==========================================================
+2022-08-10 18:54:36,513 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 18:54:36,513 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 18:54:36,513 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 18:54:36,513 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 18:54:36,513 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 18:54:36,513 conftest.py[line:90]-[INFO]: 用例执行时长: 0.80 s
+2022-08-10 18:54:36,513 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 19:36:05,338 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372177.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:41:04","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE2NjR9.by5D-GSTNmj0ojQuZbS3WiylfVf22nJ3UOtLcMf9nqzgVVv-ZNOU15OmK5MiFzVHXOiSeLQZ-rVz1KmUcX1DOQ"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 80.01 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:36:05,410 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE2NjR9.by5D-GSTNmj0ojQuZbS3WiylfVf22nJ3UOtLcMf9nqzgVVv-ZNOU15OmK5MiFzVHXOiSeLQZ-rVz1KmUcX1DOQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372187.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 1}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 65.14 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:36:06,006 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 19:36:06,006 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 19:36:06,006 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 19:36:06,006 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 19:36:06,006 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 19:36:06,006 conftest.py[line:90]-[INFO]: 用例执行时长: 1.52 s
+2022-08-10 19:36:06,006 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 19:36:50,417 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372187.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:41:49","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE3MDl9.OS4N1Ylmr1a1S2IvPYWEOPmYBwhcgqUXPkN2SEqdxuc8LJkK78m-_6Ff1tnsy9CAnjN_MBZVGayxZqTyFTjdhQ"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 60.91 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:36:50,485 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE3MDl9.OS4N1Ylmr1a1S2IvPYWEOPmYBwhcgqUXPkN2SEqdxuc8LJkK78m-_6Ff1tnsy9CAnjN_MBZVGayxZqTyFTjdhQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372197.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 0}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 66.07 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:36:50,492 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 19:36:50,492 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 19:36:50,492 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 19:36:50,492 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 19:36:50,492 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 19:36:50,492 conftest.py[line:90]-[INFO]: 用例执行时长: 0.47 s
+2022-08-10 19:36:50,493 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %
+2022-08-10 19:39:07,754 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372197.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:44:07","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE4NDd9.r2GXLItiOOWyOQ5y9TQtmmTDoSmzV0RtyF2EpsxyG__nIdLsR-i9KabAe10pbk_GlXupzFWtKV7-la4z29KhPQ"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 64.91 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:39:08,218 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372197.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:44:07","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE4NDd9.r2GXLItiOOWyOQ5y9TQtmmTDoSmzV0RtyF2EpsxyG__nIdLsR-i9KabAe10pbk_GlXupzFWtKV7-la4z29KhPQ"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 92.47 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:39:08,294 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE4NDd9.r2GXLItiOOWyOQ5y9TQtmmTDoSmzV0RtyF2EpsxyG__nIdLsR-i9KabAe10pbk_GlXupzFWtKV7-la4z29KhPQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372207.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 0}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 72.48 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:39:08,370 conftest.py[line:85]-[INFO]: 用例总数: 2
+2022-08-10 19:39:08,370 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 19:39:08,370 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 19:39:08,370 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 19:39:08,370 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 19:39:08,370 conftest.py[line:90]-[INFO]: 用例执行时长: 1.16 s
+2022-08-10 19:39:08,370 conftest.py[line:94]-[INFO]: 用例成功率: 50.00 %
+2022-08-10 19:40:45,807 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372207.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:45:45","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE5NDV9.ltWJoKLrZRI2b7Pa6yDLdA_xPV8zyYdr0pRrATS8b1IvdpbQQG67MQgPbtFD00JOS90ukZnoTqKyy-Nj1lMoxw"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 90.78 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:40:45,879 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372207.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 19:45:45","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE5NDV9.ltWJoKLrZRI2b7Pa6yDLdA_xPV8zyYdr0pRrATS8b1IvdpbQQG67MQgPbtFD00JOS90ukZnoTqKyy-Nj1lMoxw"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 62.9 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:40:45,952 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzE5NDV9.ltWJoKLrZRI2b7Pa6yDLdA_xPV8zyYdr0pRrATS8b1IvdpbQQG67MQgPbtFD00JOS90ukZnoTqKyy-Nj1lMoxw', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372217.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 0}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 68.05 ms
+Http状态码: 200
+==========================================================
+2022-08-10 19:40:46,078 conftest.py[line:85]-[INFO]: 用例总数: 2
+2022-08-10 19:40:46,078 conftest.py[line:86]-[INFO]: 通过用例数: 2
+2022-08-10 19:40:46,078 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 19:40:46,079 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 19:40:46,079 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 19:40:46,079 conftest.py[line:90]-[INFO]: 用例执行时长: 0.92 s
+2022-08-10 19:40:46,079 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %
+2022-08-10 20:13:02,704 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372217.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 20:18:02","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzM4ODJ9.qt0dDcWqMOEh35pjQEjzaQYt7Ud-LEIBX5qLSn1yWhqYBgo1Ss1U3C2KiOOpVs4CMygS_iwDlHgZJC3FKEfEvg"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 54.32 ms
+Http状态码: 200
+==========================================================
+2022-08-10 20:13:02,770 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/Recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzM4ODF9.z_B09MO9nttE5-5g8IN9c7p6zqiUssJ1ocP_4FIWfLhZF6Q--s-TD5L9_wio0KbUVxWaspj17F6pyC2s1kp9EQ', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":1004,"msg":"No handler found for POST /futureloan/member/Recharge","data":null,"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 0}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 62.95 ms
+Http状态码: 200
+==========================================================
+2022-08-10 20:13:03,034 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 20:13:03,035 conftest.py[line:86]-[INFO]: 通过用例数: 0
+2022-08-10 20:13:03,035 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 20:13:03,035 conftest.py[line:88]-[ERROR]: 失败用例数: 1
+2022-08-10 20:13:03,035 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 20:13:03,035 conftest.py[line:90]-[INFO]: 用例执行时长: 1.85 s
+2022-08-10 20:13:03,035 conftest.py[line:94]-[INFO]: 用例成功率: 0.00 %
+2022-08-10 20:14:29,423 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372217.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1,"token_info":{"token_type":"Bearer","expires_in":"2022-08-10 20:19:28","token":"eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzM5Njh9.grZQp4Gm7t0hPXXeS_dXrcDXyz9cC6iSeejLP6XJ_GWrN6WjkopEkAxGcQO3QcLLJGqbx8NJTaudNmptIistuA"}},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 61.43 ms
+Http状态码: 200
+==========================================================
+2022-08-10 20:14:29,490 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 充值
+请求路径: http://api.lemonban.com/futureloan/member/recharge
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjE3NzQxLCJleHAiOjE2NjAxMzM5Njh9.grZQp4Gm7t0hPXXeS_dXrcDXyz9cC6iSeejLP6XJ_GWrN6WjkopEkAxGcQO3QcLLJGqbx8NJTaudNmptIistuA', 'Content-Length': '34'}
+请求内容: {'json': {'member_id': 17741, 'amount': 10}}
+响应内容: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":372227.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {'断言1': {'response': '$.code', '==': 0}, '断言2': {'response': '$.data.id', '==': 17741}}
+接口响应时长: 64.89 ms
+Http状态码: 200
+==========================================================
+2022-08-10 20:14:29,496 conftest.py[line:85]-[INFO]: 用例总数: 1
+2022-08-10 20:14:29,496 conftest.py[line:86]-[INFO]: 通过用例数: 1
+2022-08-10 20:14:29,496 conftest.py[line:87]-[ERROR]: 异常用例数: 0
+2022-08-10 20:14:29,496 conftest.py[line:88]-[ERROR]: 失败用例数: 0
+2022-08-10 20:14:29,496 conftest.py[line:89]-[WARNING]: 跳过用例数: 0
+2022-08-10 20:14:29,496 conftest.py[line:90]-[INFO]: 用例执行时长: 0.40 s
+2022-08-10 20:14:29,497 conftest.py[line:94]-[INFO]: 用例成功率: 100.00 %

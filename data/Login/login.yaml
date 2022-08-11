@@ -1,0 +1,32 @@
+login_01:
+    url: /member/login
+    method: POST
+    title: 用户正常登录
+    headers:
+      # 请求头类型
+      Content-Type: application/json;
+    json:  # json格式这里的参数类型就填写json, 或者data,files,export,无
+        mobile_phone: 13125007780
+        pwd: 12345678
+    # 是否执行用例
+    is_run: True
+    is_token: False
+    # 是否有依赖业务，为空或者false则表示没有
+    is_depend: False
+    # 依赖的数据
+    depend_case_data:
+    # 断言
+    assert:
+    # sql断言
+    sql:
+    # 前置sql
+    setup_sql:
+    # 后置sql
+    teardown_sql:
+    # 后置清洗数据
+    teardown_case:
+    # 休眠
+    sleep:
+    # 设置当前接口内容到缓存中
+    set_api_cache:
+

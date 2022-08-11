@@ -1,0 +1,22 @@
+2022-08-10 10:02:19,740 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:13:33,328 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:14:30,942 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:19:07,645 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:19:39,602 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:29:42,031 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:29:42,046 conftest.py[line:34]-[ERROR]: case_id: login_01 重复了, 请修改case_id
+文件路径: D:\lxw\python_project\mydemo\demo\demo_api2\data\recharge\recharge.yaml
+2022-08-10 10:31:58,514 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:36:41,994 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 10:38:05,505 handle_login.py[line:45]-[ERROR]: 提取登录token失败, 请检查响应内容是否存在"token"关键字
+2022-08-10 15:01:30,174 yaml_control.py[line:61]-[ERROR]: 请检查相关数据是否填写, 如已填写, 请检查缩进问题
+2022-08-10 15:19:55,351 assert_control.py[line:60]-[ERROR]: jsonpath提取失败！
+ 提取的数据: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":375757.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"} 
+ 表达式: $.data.username
+2022-08-10 15:22:23,193 assert_control.py[line:60]-[ERROR]: jsonpath提取失败！
+ 提取的数据: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":375767.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"} 
+ 表达式: $.data.code
+2022-08-10 15:25:29,152 assert_control.py[line:60]-[ERROR]: jsonpath提取失败！
+ 提取的数据: {"code":0,"msg":"OK","data":{"id":17741,"leave_amount":375797.0,"mobile_phone":"13125007780","reg_name":"小柠檬","reg_time":"2022-07-21 13:08:08.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved"} 
+ 表达式: $.json.member_id
+2022-08-10 18:06:03,102 assert_control.py[line:106]-[ERROR]: 用例:{case_name}测试通过!

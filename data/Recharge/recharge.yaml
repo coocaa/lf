@@ -1,0 +1,45 @@
+recharge_01:
+    url: /member/recharge
+    method: POST
+    title: 充值
+    headers:
+      # 请求头类型
+      Content-Type: application/json;
+    json:  # json格式这里的参数类型就填写json, 或者data,files,export,无
+        member_id: 1774155
+        amount: 10
+    # 是否执行用例
+    is_run: True
+    # is_token: False  如果添加这个字段后, 该条用例就不需要token,默认是需要token
+    # 是否有依赖业务，为空或者false则表示没有
+    is_depend: True
+    # 依赖的数据
+    depend_case_data:
+      # 依赖用例的id
+      - case_id: self
+        depend_data:
+          - depend_type: db
+            jsonpath: $.data.id
+            # 设置为缓存
+            #set_cache: member_id
+            # 替换请求内容中的数据
+            replace_key: $.json.member_id
+
+    setup_sql:
+      - select * from  users where userid=='14345';
+    # 断言
+    assert:
+      # 断言接口状态码
+      apicode:
+        assert_type: response
+        jsonpath: $.code
+        ==: 0
+      # 断言接口返回的id
+      userid:
+        assert_type: response
+        jsonpath: $.data.id
+        ==: 17741
+    #sleep: 5  添加该字段后,用例会等待5秒后执行
+    sql:
+
+
