@@ -27,6 +27,18 @@ def get_path(dir_name):
     return os.path.join(BASE_PATH, dir_name.replace('$', os.sep))
 
 
+def generate_log_path(filename):
+    """
+    处理日志文件路径
+    """
+    log_dir = get_path(f'logs${now_date()}')
+    if not os.path.exists(log_dir):
+        os.mkdir(log_dir)
+    return os.path.join(log_dir, filename)
+
+
+
+
 class HandlePath:
     # 1.测试用例路径
     CASE_DIR = get_path('test_case$')
@@ -47,9 +59,7 @@ class HandlePath:
     # 7.测试报告路径
     REPORT_DIR = get_path('reports$')
 
-    # 日志文件路径
-    log_info_path = get_path(f'logs${now_date()}--info.log')
-    log_error_path = get_path(f'logs${now_date()}--error.log')
-    log_warning_path = get_path(f'logs${now_date()}--warning.log')
-
-
+    # 8.日志文件路径
+    log_info_path = generate_log_path(f'{now_date()}--info.log')
+    log_error_path = generate_log_path(f'{now_date()}--error.log')
+    log_warning_path = generate_log_path(f'{now_date()}--warning.log')

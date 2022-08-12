@@ -1,6 +1,0 @@
-2022-08-09 10:16:17,802 log_control.py[line:68]-[WARNING]: fefefa
-2022-08-09 10:16:38,284 log_control.py[line:67]-[WARNING]: fefefa
-2022-08-09 20:00:44,053 mysql_control.py[line:101]-[WARNING]: 数据库状态未开启,请检查配置
-2022-08-09 20:00:44,370 mysql_control.py[line:101]-[WARNING]: 数据库状态未开启,请检查配置
-2022-08-09 20:01:57,092 mysql_control.py[line:101]-[WARNING]: 数据库状态未开启,请检查配置
-2022-08-09 20:01:57,449 mysql_control.py[line:101]-[WARNING]: 数据库状态未开启,请检查配置
