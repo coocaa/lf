@@ -16,9 +16,9 @@ recharge_01:
     # 依赖的数据
     depend_case_data:
       # 依赖用例的id
-      - case_id: self
+      - case_id: login_01
         depend_data:
-          - depend_type: db
+          - depend_type: response
             jsonpath: $.data.id
             # 设置为缓存
             #set_cache: member_id

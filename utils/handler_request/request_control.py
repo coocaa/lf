@@ -250,7 +250,7 @@ class HandleRequest:
         :return:
         """
         if sql_data:
-            result = ExecutionAssert.execution_assert(sql_data, response.json())
+            result = ExecutionAssert().execution_assert(sql_data, response.json())
         else:
             result = {"sql": None}
         return result

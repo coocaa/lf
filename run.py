@@ -22,7 +22,7 @@ def cmd():
     # 3.执行程序
     pytest.main(['-s', '-W','ignore:Module already imported:pytest.PytestWarning',
         '--report=report.html',
-        f'--title={conf.get("other", "projectName")}测试报告',
+        f'--title={conf.get("other", "project_name")}测试报告',
         f'--tester={conf.get("other", "author")}',
         '--desc=报告描述信息',
         '--template=2'
