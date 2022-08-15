@@ -20,16 +20,18 @@ def get_value_by_jsonpath(data: dict, expr: str) -> str:
             value = jsonpath.jsonpath(data, expr)[0]
             return value
         except Exception as e:
-            log_error.logger.error(f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}")
-            raise ValueError(f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}")
+            msg = f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}"
+            log_error.logger.error(msg)
+            raise ValueError(msg)
     else:
         # 将json格式的字符串,转化为字典--反序列化
         try:
-            value = jsonpath.jsonpath(data, expr)[0]
+            value = jsonpath.jsonpath(json.loads(data), expr)[0]
             return value
         except Exception as e:
-            log_error.logger.error(f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}")
-            raise ValueError(f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}")
+            msg = f"jsonpath提取失败！\n "f"提取的数据: {data} \n " f"表达式: {expr}"
+            log_error.logger.error(msg)
+            raise ValueError(msg)
 
 
 def jsonpath_replace(change_data, key_name):
@@ -47,33 +49,39 @@ def jsonpath_replace(change_data, key_name):
             data += "[" + i[1:-1] + "]"
         else:
             data += "['" + i + "']"
-
     return data
 
 
 def sql_regular(sql, res_data=None):
     """
-    这里处理sql中的依赖数据，通过获取接口响应的jsonpath的值进行替换
+    这里处理sql中的依赖数据，通过获取接口响应的jsonpath的值进行替换 --expr('$.token')
+    :param sql: sql语句
+    :param res_data: 接口响应数据
+    :return:
+    """
+    """
+
     :param res_data: 接口响应数据, json格式
     :param value:
     :return:
     """
-    sql_json_list = re.findall(r"\$json\((.*?)\)\$", sql)
+    json_expr = re.findall(r'expr\(.+?\)', sql)
 
-    for i in sql_json_list:
-        pattern = re.compile(r'\$json\(' + i.replace('$', "\$").replace('[', '\[') + r'\)\$')
-        key = str(sql_json(i, res_data))
-        sql = re.sub(pattern, key, sql, count=1)
+    for item in json_expr:
+        # 提取变量--(变量)
+        start_index = item.find('(')
+        end_index = item.rfind(')')
+        expr = item[start_index + 1:end_index]
 
+        # 生成表达式
+        pattern = re.compile(r'expr\(' + expr.replace('$', "\$").replace('[', '\[') + r'\)')
+        try:
+            value = get_value_by_jsonpath(res_data, expr)
+            # 使用sub方法，替换已经拿到的内容
+            sql = re.sub(pattern, str(value), sql)
+        except Exception:
+            log_error.logger.error('sql中提取响应数据失败,请检查')
     return sql
-
-
-def sql_json(js_path, res_data):
-    """ 提取 sql中的 json 数据 """
-    _json_data = jsonpath(res_data, js_path)[0]
-    if _json_data is not False:
-        raise ValueError(f"sql中的jsonpath获取失败 {res_data}, {js_path}")
-    return jsonpath(res_data, js_path)[0]
 
 
 def get_value(data, key=None):
@@ -91,4 +99,3 @@ def get_value(data, key=None):
         # 将json格式的字符串,转化为字典--反序列化
         value = jsonpath.jsonpath(json.loads(data), f'$..{key}')
         return value
-

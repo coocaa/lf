@@ -51,11 +51,22 @@ def random_int(mix_value: int = None, max_value: int = None) -> str:
     else:
         return str(random.randint(100, 9999))
 
+
 def cache(variable):
     """
     处理缓存变量
     :param variable:
     :return:
     """
-    result=f'cache({variable})'
+    result = f'cache({variable})'
+    return result
+
+
+def expr(variable):
+    """
+    处理sql中提取的变量
+    :param variable:
+    :return:
+    """
+    result = f'expr({variable})'
     return result
