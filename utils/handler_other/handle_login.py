@@ -18,7 +18,9 @@ class HandleLogin:
 
     def handle_login(self):
         token, cookie = self.get_token_cookie()
-        HandleCache('cookie').set_cache(cookie)
+        # 1.将登录接口中的cookie写入缓存中，其中cookie是缓存名称
+        HandleCache.set_cache('cookie', cookie)
+        # 2.将token写入配置文件
         self.write_token(token)
 
     def get_token_cookie(self):
@@ -50,8 +52,10 @@ class HandleLogin:
         """
         new_token = self.handler_token(token)
 
+        # 1.token存储位置
         options = conf.options("token")
         conf.set('token', options[2], new_token)
+        # 2.将token写入配置文件
         conf.write(fp=open(HandlePath.CONF_PATH, 'w', encoding='utf-8'))
 
     def handler_token(self, token):

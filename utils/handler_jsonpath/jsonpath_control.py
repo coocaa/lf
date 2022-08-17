@@ -60,7 +60,7 @@ def sql_regular(sql, res_data=None):
     :return:
     """
     """
-
+    
     :param res_data: 接口响应数据, json格式
     :param value:
     :return:
@@ -96,6 +96,5 @@ def get_value(data, key=None):
         return value
 
     else:
-        # 将json格式的字符串,转化为字典--反序列化
         value = jsonpath.jsonpath(json.loads(data), f'$..{key}')
         return value

@@ -12,7 +12,6 @@ from utils.handler_jsonpath.jsonpath_control import get_value_by_jsonpath, jsonp
 from utils.handler_request.request_control import HandleRequest
 from utils.handler_log.log_control import log_error
 from utils.handler_enum.depend_data_enum import DependDataEnum
-from utils.handler_enum.request_params_enum import RequestParamsEnum
 
 
 class HandleDepend:
@@ -26,11 +25,12 @@ class HandleDepend:
         @param case_data:
         @param sql_result:
         """
-
         expr_and_value = self.analysis_depend(case_data, sql_result)
+
         for key, value in expr_and_value.items():
             change_data = key.split(".")  # key=$.data.token
             new_data = jsonpath_replace(change_data=change_data, key_name='case_data')
+
             new_data += f'={value}'
             exec(new_data)
 
@@ -39,23 +39,26 @@ class HandleDepend:
         解析依赖的数据
         :return:
         """
-
         depend_case_data = case_data[DependDataEnum.DEPEND_CASE_DATA.value]  # list类型
 
         expr_and_value = {}
         try:
             for depend_item in depend_case_data:
+
                 case_id = depend_item[DependDataEnum.CASE_ID.value]
                 if case_id == 'self':
                     self.depend_type_is_sql(sql_result, depend_item, expr_and_value, case_data)
 
                 else:
+
                     cache_case = self.get_cache_data(case_id)
                     res_info = HandleRequest().request(cache_case)
-                    depend_data = depend_item.get(DependDataEnum.DEPEND_DATA.value)
 
+                    # 处理具体依赖数据
+                    depend_data = depend_item.get(DependDataEnum.DEPEND_DATA.value)
                     if depend_data:
                         for item in depend_data:
+                            # 提取所有的具体依赖数据
                             depend_type = item[DependDataEnum.DEPEND_TYPE.value]
                             jsonpath_expr = item[DependDataEnum.JSONPATH.value]
                             replace_key_value = item.get(DependDataEnum.REPLACE_KEY.value)
@@ -86,10 +89,10 @@ class HandleDepend:
                             else:
                                 log_error.logger.error(
                                     "当前用例的depend_type不正确，目前只支持request、response、db依赖\n"
-                                    f"当前填写内容: {item[DependDataEnum.DEPEND_TYPE.value]}")
+                                    f"当前依赖类型: {item[DependDataEnum.DEPEND_TYPE.value]}")
                                 raise ValueError(
                                     "当前用例的depend_type不正确，目前只支持request、response、db依赖\n"
-                                    f"当前填写内容: {item[DependDataEnum.DEPEND_TYPE.value]}")
+                                    f"当前依赖类型: {item[DependDataEnum.DEPEND_TYPE.value]}")
 
             return expr_and_value
 
@@ -105,7 +108,6 @@ class HandleDepend:
             log_error.logger.error("请检查相关数据是否填写, 如已填写, 请检查缩进问题")
             raise TypeError("请检查相关数据是否填写, 如已填写, 请检查缩进问题") from exc
 
-
     @classmethod
     def depend_type_is_sql(cls, sql_result: Dict, depend_item: Dict, expr_and_value: Dict, case_data: Dict) -> None:
         """
@@ -120,12 +122,12 @@ class HandleDepend:
         if sql_result != {}:
             depend_data = depend_item[DependDataEnum.DEPEND_DATA.value]
             for item in depend_data:
-
                 value = get_value_by_jsonpath(sql_result, item[DependDataEnum.JSONPATH.value])
 
                 cache_name = item.get(DependDataEnum.SET_CACHE.value)
                 if cache_name:
-                    HandleCache(filename=cache_name).set_cache(value)
+                    # 设置缓存名--和value
+                    HandleCache.set_cache(cache_name, value)
 
                 replace_key_value = item.get([DependDataEnum.REPLACE_KEY.value])
                 if replace_key_value:
@@ -136,7 +138,8 @@ class HandleDepend:
             log_error.logger.error("检测到你在使用数据库字段，但是setup_sql中未查询出任何数据")
 
     @classmethod
-    def other_depend_type(cls, depend_type, case_data, expr_and_value, res_data, expr, replace_key, set_cache_value) -> None:
+    def other_depend_type(cls, depend_type, case_data, expr_and_value, res_data, expr, replace_key,
+                          set_cache_value) -> None:
         """
         处理数据替换
         :param depend_type:
@@ -150,8 +153,10 @@ class HandleDepend:
         """
         value = get_value_by_jsonpath(res_data, expr)
         if set_cache_value:
-            HandleCache(filename=set_cache_value).set_cache(value)
+            # 设置jsonpath提取的值存入缓存
+            HandleCache.set_cache(set_cache_value, value)
         if replace_key:
+            # 处理替换的地方是 response的内容
             if depend_type == 0:
                 expr_and_value[replace_key] = value
 
@@ -171,7 +176,7 @@ class HandleDepend:
         :return:
         """
 
-        if "$url_param" in replace_key:
+        if "$url_params" in replace_key:
             _url = case_data['url'].replace(replace_key, str(value))
             expr_and_value['$.url'] = _url
         else:
@@ -184,11 +189,10 @@ class HandleDepend:
         :param case_id:
         :return:
         """
-        # 安全的方式读取缓存文件中的数据
-        # cache_data = ast.literal_eval(HandleCache('cases_cache.json').get_cache())[case_id]
-        try:
-            cache_data = HandleCache('cases_cache.json').get_json_cache()[case_id]
+        cache_data = HandleCache.get_cases_cache(case_id)
+        if cache_data:
             return cache_data
-        except KeyError as e:
-            log_error.logger.error(f'依赖的用例id不存在: {case_id} ,请检查')
-            raise KeyError(f'依赖的用例id不存在: {case_id} ,请检查')
+        else:
+            msg = f'依赖数据的用例id不存在: {case_id} ,请检查'
+            log_error.logger.error(msg)
+            raise KeyError(msg)

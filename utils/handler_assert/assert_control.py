@@ -9,7 +9,7 @@ from utils.handler_assert import assert_type
 from utils.handler_cache.update_case_cache import update_case_cache
 from utils.handler_conf.get_conf_data import db_status
 from utils.handler_enum.assert_method_enum import AssertMethodEnum
-from utils.handler_log.log_control import log_error, log_warning, log_info
+from utils.handler_log.log_control import log_error, log_warning
 from utils.handler_other.common import load_module_func
 
 
@@ -29,7 +29,6 @@ class HandleAssert:
         :param res_info: 请求的参数信息和响应内容
         :return:
         """
-        # 提取需要的数据处理
         response_data = res_info['response_data']
         sql_data = res_info['sql_data']
         status_code = res_info['status_code']
@@ -47,6 +46,7 @@ class HandleAssert:
 
                         resp_data = jsonpath(json.loads(response_data), assert_jsonpath)
                         if resp_data:
+                            # 先处理断言的方式和,要提取的预期结果jsonpath表达式
                             assert_method, expect_value_expr = self.get_expect_value_expr(expect_value_expr)
                             self.assert_type_handle(assert_type, sql_data, assert_method, expect_value_expr, item,
                                                     resp_data[0])
@@ -85,15 +85,12 @@ class HandleAssert:
         :param res_info: 响应全部内容
         :return:
         """
-        # 处理断言类型为sql的
         if assert_type == 'db':
             self.type_is_sql(sql_data, assert_method, expect_value_expr, item, resp_data)
 
         elif assert_type is None or assert_type == 'response':
             assert_method_enum = AssertMethodEnum(assert_method).name
             self.funcs_mapping[assert_method_enum](resp_data, expect_value_expr)
-
-
         else:
             raise ValueError("断言错误!, 目前只支持数据库断言和响应断言")
 
@@ -107,7 +104,6 @@ class HandleAssert:
         :return:
         """
 
-
         if db_status():
             if sql_data != {'sql': None}:
                 sql_data_value = jsonpath(sql_data, expect_value_expr)
@@ -118,7 +114,6 @@ class HandleAssert:
 
                 sql_data_value = self.sql_data_is_bytes(sql_data_value[0])
                 assert_method_enum = AssertMethodEnum(assert_method).name
-                # 执行断言
                 self.funcs_mapping[assert_method_enum](resp_data, sql_data_value)
 
             # 用例中未填写SQL

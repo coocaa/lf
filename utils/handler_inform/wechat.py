@@ -23,7 +23,7 @@ class WeChatSend:
 
     def send_main(self):
         """ 发送企业微信通知 """
-        text = f"""【{conf.get('other', 'project_name')}自动化通知】
+        text = f"""【{conf.get('other', 'projectName')}自动化通知】
                 >测试环境：<font color=\"info\">{conf.get('other', 'env')}</font>
                 >测试负责人：@{conf.get('other', 'author')}
                 >

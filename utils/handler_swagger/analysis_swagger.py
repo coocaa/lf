@@ -5,7 +5,6 @@
 import os
 import requests
 from ruamel import yaml
-
 from utils.handler_path.path_contr import get_path
 
 

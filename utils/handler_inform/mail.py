@@ -18,7 +18,7 @@ class EmailSend:
         self.email_host = conf.get('Email', 'email_host')  # QQ 邮件 STAMP 服务器地址
         self.stamp_key = conf.get('Email', 'stamp_key')  # STAMP 授权码
         self.send_list = conf.get('Email', 'send_list')  # 收件人
-        self.project_name = conf.get('other', 'project_name')
+        self.project_name = conf.get('other', 'projectName')
 
     def send_main(self) -> None:
         """

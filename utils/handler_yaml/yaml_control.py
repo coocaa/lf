@@ -4,12 +4,9 @@
 # @Author  : liuxw20
 import inspect
 import os
-from parser import ParserError
-
 import jinja2
 import yaml
 from jinja2 import UndefinedError
-
 from utils.handler_random import random_control
 from utils.handler_path.path_contr import HandlePath
 from utils.handler_log.log_control import log_error
@@ -50,11 +47,13 @@ class HandleYaml:
                 data = cls.render_yaml(file_path)
                 return yaml.safe_load(data)
             except UndefinedError as e:
-                log_error.logger.error(f'读取yaml文件数据失败, 文件路径为:{file_path}, 异常原因: 存在未定义的变量')
-                raise ValueError(f'\n读取yaml文件数据失败, 文件路径为:{file_path}, 异常原因: 存在未定义的变量')
+                msg = f'\n读取yaml文件数据失败, 文件路径为:{file_path}, 异常原因: 存在未定义的变量'
+                log_error.logger.error(msg)
+                raise ValueError(msg)
             except Exception as e:
-                log_error.logger.error("请检查相关数据是否填写, 如已填写, 请检查缩进问题")
-                raise TypeError("\n请检查相关数据是否填写, 如已填写, 请检查缩进问题") from e
+                msg = "\n请检查相关数据是否填写, 如已填写, 请检查缩进问题"
+                log_error.logger.error(msg)
+                raise TypeError(msg) from e
         else:
             raise FileNotFoundError("文件路径不存在:{}".format(file_path))
 

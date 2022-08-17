@@ -5,11 +5,7 @@
 import time
 import pytest
 from utils.handler_other.handle_login import HandleLogin
-from utils.handler_path.path_contr import HandlePath
-from utils.handler_cache.cache_control import HandleCache
-from utils.handler_other.common import get_case_files
-from utils.handler_yaml.yaml_analysis import AnalysisYamlData
-from utils.handler_log.log_control import log_error, log_info
+from utils.handler_log.log_control import log_info
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -21,36 +17,13 @@ def init_login():
     HandleLogin().handle_login()
 
 
-@pytest.fixture(scope="session", autouse=True)
-def set_cases_cache():
-    """
-    获取所有用例，写入缓存文件
-    :return:
-    """
-
-    cache_data = {}
-
-    for file_path in get_case_files(data_dir=HandlePath.DATA_DIR):
-        case_list = AnalysisYamlData(file_path).analysis(case_id_mark=True)
-        for case in case_list:
-            for key, value in case.items():  # key==case_id
-
-                if key in cache_data.keys():
-                    log_error.logger.error(f"case_id: {key} 重复了, 请修改case_id\n"
-                                           f"文件路径: {file_path}")
-                    raise ValueError(f"case_id: {key} 重复了, 请修改case_id\n"
-                                     f"文件路径: {file_path}")
-                else:
-
-                    cache_data[key] = value
-
-    # 将所有的测试用例写入缓存文件中
-    HandleCache(filename='cases_cache.json').set_json_cache(cache_data)
-
-
 @pytest.fixture(scope="function", autouse=True)
 def case_skip(case_item):
-    """处理跳过用例"""
+    """
+    处理跳过用例
+    :param case_item:
+    :return:
+    """
     if case_item['is_run'] is False:
         pytest.skip()
 
@@ -61,8 +34,33 @@ def pytest_collection_modifyitems(items):
     :return:
     """
     for item in items:
-        item.name = item.name.encode("utf-8").decode("unicode_escape")
-        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
+        item.name = item.name.encode("utf-8").decode("unicode_escape")  # 用例方法名
+        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")  # 用例节点位置
+
+    # 1.指定运行顺序用例
+    case_func_names = ["test_REGISTER", "test_LOGIN", "test_Cart_List", "test_ADD", "test_Guest_ADD",
+                       "test_Clear_Cart_Item"]
+
+    # 2.提取指定顺序的用例
+    last_run_items = []
+    for case in case_func_names:
+        for item in items:
+            func_name = item.name.split("[")[0]
+            if case == func_name:
+                last_run_items.append(item)
+
+    # 3.将指定的运行的用例顺序与原先的进行交换
+    for run_item in last_run_items:
+        # 1.获取指定运行用例顺序的下标
+        last_index = last_run_items.index(run_item)
+        # 2.获取原先运行用例顺序的下标
+        old_index = items.index(run_item)
+
+        if old_index != last_index:
+            last_case = items[last_index]
+            old_index = items.index(last_case)
+            # 3.将用例执行顺序进行替换
+            items[last_index], items[old_index] = items[old_index], items[last_index]
 
 
 def pytest_terminal_summary(terminalreporter):
@@ -73,14 +71,14 @@ def pytest_terminal_summary(terminalreporter):
     _pass = len([i for i in terminalreporter.stats.get('passed', []) if i.when != 'teardown'])
     _error = len([i for i in terminalreporter.stats.get('error', []) if i.when != 'teardown'])
     _failed = len([i for i in terminalreporter.stats.get('failed', []) if i.when != 'teardown'])
-    skipped = len([i for i in terminalreporter.stats.get('skipped', []) if i.when != 'teardown'])
+    _skipped = len([i for i in terminalreporter.stats.get('skipped', []) if i.when != 'teardown'])
     _times = time.time() - terminalreporter._sessionstarttime
 
     log_info.logger.info(f"用例总数: {_total}")
     log_info.logger.info(f"通过用例数: {_pass}")
     log_info.logger.error(f"异常用例数: {_error}")
     log_info.logger.error(f"失败用例数: {_failed}")
-    log_info.logger.warning(f"跳过用例数: {skipped}")
+    log_info.logger.warning(f"跳过用例数: {_skipped}")
     log_info.logger.info("用例执行时长: %.2f" % _times + " s")
 
     try:

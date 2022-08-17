@@ -3,8 +3,8 @@
 # @Time   : 2022-08-01 10:57:25
 # @Author : liuxw20
 from typing import Union
-
 from utils.handler_conf.conf_control import conf
+from utils.handler_enum.set_api_cache_enum import SetApiCacheEnum
 from utils.handler_path.path_contr import HandlePath
 from utils.handler_enum.depend_data_enum import DependDataEnum
 from utils.handler_enum.request_params_enum import RequestParamsEnum
@@ -32,7 +32,6 @@ class AnalysisYamlData:
         case_list = []
         for key, value in yaml_data.items():  # key是用例的id
             case_data = {
-
                 RequestParamsEnum.TITLE.value: self.check_title(key, value),
                 RequestParamsEnum.URL.value: self.check_url(key, value),
                 RequestParamsEnum.METHOD.value: self.check_method(key, value),
@@ -53,12 +52,13 @@ class AnalysisYamlData:
                 RequestParamsEnum.TEARDOWN_SQL.value: self.teardown_sql(value),
                 RequestParamsEnum.TEARDOWN_CASE.value: self.teardown_case(value),
                 RequestParamsEnum.SLEEP.value: self.time_sleep(value),
-                RequestParamsEnum.SET_API_CACHE.value: self.set_api_cache(value)
+                SetApiCacheEnum.SET_API_CACHE.value: self.set_api_cache(value)
             }
-
+            # 3.处理缓存文件用的--用例数据
             if case_id_mark is True:
                 case_list.append({key: case_data})
             else:
+                # 4.处理测试用的--用例数据
                 case_list.append(case_data)
 
         return case_list
@@ -229,7 +229,7 @@ class AnalysisYamlData:
         if self.check_is_depend(case_id, case_data) is True:
             try:
                 depend_case_data = case_data[DependDataEnum.DEPEND_CASE_DATA.value]
-                # 判断当用例中设置的需要依赖用例，但是dependence_data下方没有填写依赖的数据，异常提示
+                # 判断当用例中设置的需要依赖用例，但是depend_case_data下方没有填写依赖的数据，异常提示
                 if depend_case_data is None:
                     raise ValueError(f"depend_case_data 依赖数据中缺少依赖相关数据！"
                                      f"如有填写，请检查缩进是否正确"
@@ -310,7 +310,7 @@ class AnalysisYamlData:
         :return:
         """
 
-        return case_data.get(RequestParamsEnum.SET_API_CACHE.value)
+        return case_data.get(SetApiCacheEnum.SET_API_CACHE.value)
 
     def get_extra_headers(self,case_data) -> dict:
         """
@@ -319,11 +319,13 @@ class AnalysisYamlData:
         :return:
         """
         _headers = {}
-        # 获取额外头部
+        # 1.获取额外头部
         _headers.update(eval(conf.get('env', 'headers')))
+        # 2.处理局部token配置
         if self.check_is_token(case_data) is False:
             return _headers
 
+        # 3.处理全局token配置
         is_token = conf.getboolean('token', 'is_token')
         if is_token:
             item = conf.options("token")
@@ -338,7 +340,7 @@ class AnalysisYamlData:
         :param key: 参数名
         :return:
         """
-        detail = f'用例中未找到: "{key}" 参数， 如已填写，请检查用例缩进是否存在问题' \
+        detail = f'用例中未找到: "{key}" 字段， 如已填写，请检查用例缩进是否存在问题' \
                  f"用例ID: {case_id}\n " \
                  f"用例路径: {self.file_path}"
         log_error.logger.error(detail)

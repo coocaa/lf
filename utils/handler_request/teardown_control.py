@@ -57,19 +57,20 @@ class HandlerTeardown:
         :param old_res_data:  响应数据
         :return:
         """
-        cache_data = HandleCache('cases_cache.json').get_json_cache().get(data_item['case_id'])
+
+        cache_data = HandleCache.get_cases_cache(data_item['case_id'])
         if cache_data:
             res_info = self.teardown_http_requests(cache_data)
 
             param_ready = data_item['param_ready']
             for item in param_ready:
-                # 判断请求类型为自身,拿到当前自身case_id的响应内容
                 if item['depend_type'] == 'self_response':
                     self.depend_type_is_self_response(teardown_case_data=item, old_res_data=old_res_data,
                                                       later_res_data=json.loads(res_info['response_data']))
         else:
-            log_error.logger.error(f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查')
-            raise ValueError(f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查')
+            msg = f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查'
+            log_error.logger.error(msg)
+            raise ValueError(msg)
 
     def send_request(self, data_item: Dict, old_request_data: Dict, old_res_data: Dict) -> None:
         """
@@ -79,23 +80,21 @@ class HandlerTeardown:
         :param old_res_data: 前置的响应数据
         :return:
         """
-        cache_data = HandleCache('cases_cache.json').set_json_cache().get(data_item['case_id'])
+        cache_data = HandleCache.get_cases_cache(data_item['case_id'])
         if cache_data:
             _send_request = data_item['send_request']
             for item in _send_request:
                 if item['depend_type'] == 'cache':
                     exec(self.depend_type_is_cache(teardown_case_data=item))
-
                 if item['depend_type'] == 'response':
                     exec(self.depend_type_response(teardown_case_data=item, old_request_data=old_res_data))
-
                 elif item['dependent_type'] == 'request':
                     self.dependent_type_request(teardown_case_data=item, old_request_data=old_request_data)
-
             self.teardown_http_requests(cache_data)
         else:
-            log_error.logger.error(f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查')
-            raise ValueError(f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查')
+            msg = f'teardown依赖的用例id不存在: {data_item["case_id"]} ,请检查'
+            log_error.logger.error(msg)
+            raise ValueError(msg)
 
     @classmethod
     def teardown_http_requests(cls, cache_data: Dict) -> Dict:
@@ -121,7 +120,7 @@ class HandlerTeardown:
             set_cache_value_name = teardown_case_data['set_cache']
             _response_depend = jsonpath(later_res_data, expr=teardown_case_data['jsonpath'])
             if _response_depend:
-                HandleCache(filename=set_cache_value_name).set_cache(_response_depend[0])
+                HandleCache.set_cache(set_cache_value_name, _response_depend[0])
             else:
                 raise ValueError(
                     f"jsonpath提取失败，替换内容: {old_res_data} \n"
@@ -140,15 +139,17 @@ class HandlerTeardown:
         replace_key = teardown_case_data['replace_key']
 
         change_data = replace_key.split(".")  # $.data.applyId
-        new_data = jsonpath_replace(change_data=change_data,key_name='teardown_case')
+        new_data = jsonpath_replace(change_data=change_data, key_name='teardown_case')
 
+        # jsonpath 数据解析
         types = ['int:', 'bool:', 'list:', 'dict:', 'tuple:', 'float:']
         if any(i in cache_name for i in types) is True:
-            cache_data = HandleCache(cache_name.split(':')[1]).get_cache()
+            cache_data=HandleCache.get_cache(cache_name.split(':')[1])
             new_data += f" = {cache_data}"
 
+        # 最终提取到的数据,转换成 teardown_case[xxx][xxx]
         else:
-            cache_data = HandleCache(cache_name).get_cache()
+            cache_data = HandleCache.get_cache(cache_name)
             new_data += f" = '{cache_data}'"
 
         return new_data
@@ -182,7 +183,7 @@ class HandlerTeardown:
             request_set_value = teardown_case_data['set_value']
             request_depend = jsonpath(old_request_data, expr=teardown_case_data['jsonpath'])
             if request_depend:
-                HandleCache(filename=request_set_value).set_cache(request_depend[0])
+                HandleCache.set_cache(request_set_value, request_depend[0])
             else:
                 raise ValueError(
                     f"jsonpath提取失败，替换内容: {old_request_data} \n"

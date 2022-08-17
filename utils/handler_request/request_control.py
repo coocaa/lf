@@ -18,6 +18,7 @@ from utils.handler_cache.update_case_cache import update_case_cache
 from utils.handler_conf.conf_control import conf
 from utils.handler_enum.depend_data_enum import DependDataEnum
 from utils.handler_enum.request_params_enum import RequestParamsEnum
+from utils.handler_enum.set_api_cache_enum import SetApiCacheEnum
 from utils.handler_other.common import get_expect_result
 from utils.handler_path.path_contr import HandlePath
 from utils.handler_log.log_control import log_error, log_warning
@@ -42,11 +43,13 @@ class HandleRequest:
         :param kwargs:
         :return:
         """
-        # 判断用例状态是否需要执行
+        # 1.判断用例状态是否需要执行
         if self.case_is_run(case_data):
-            # 更新测试数据--目的是提取最新缓存数据
+
+            # 2.更新测试数据--目的是提取最新缓存数据
             case_data = eval(update_case_cache(str(case_data)))
 
+            # 3.获取测试数据
             url = case_data[RequestParamsEnum.URL.value]
             method = case_data[RequestParamsEnum.METHOD.value]
             headers = case_data[RequestParamsEnum.HEADERS.value]
@@ -60,24 +63,29 @@ class HandleRequest:
 
             is_depend = case_data[DependDataEnum.IS_DEPEND.value]
             setup_sql = case_data.get(RequestParamsEnum.SETUP_SQL.value)
-            set_api_cache = case_data[RequestParamsEnum.SET_API_CACHE.value]
+            set_api_cache = case_data[SetApiCacheEnum.SET_API_CACHE.value]
             time_sleep = case_data[RequestParamsEnum.SLEEP.value]
 
+            # 4.处理前置sql
             sql_result = SetupMysql().get_setup_sql_data(setup_sql)
 
-            # 处理依赖数据逻辑
+            # 5.处理依赖数据逻辑
             if depend_switch is True:
                 if is_depend is True:
                     from utils.handler_request.depend_control import HandleDepend
                     HandleDepend().get_depend_data(case_data, sql_result)
+
+            # 6.处理休眠
             if time_sleep is not None:
                 time.sleep(time_sleep)
 
-            # 获取响应结果
+            # 7.获取响应结果
             response = self.send_request(url, method, headers, params, json, data, files, export, is_token)
+
+            # 8.将当前接口的信息写入缓存文件中
             SetApiToCache(set_api_cache, case_data, response).set_main_caches()
 
-            # 将请求信息和响应结果集成到一起进行返回
+            # 9.将请求信息和响应结果集成到一起进行返回
             return self.get_request_result(response, case_data)
 
     def send_request(self, url, method, headers, params, json, data, files, export, is_token):
@@ -120,7 +128,7 @@ class HandleRequest:
         :param case_data: 测试数据
         :return:
         """
-        expect_result = get_expect_result(case_data[RequestParamsEnum.ASSERT.value])
+        expect_result=get_expect_result(case_data[RequestParamsEnum.ASSERT.value])
         result_data = {
             "is_run": case_data[RequestParamsEnum.IS_RUN.value],
             "title": case_data[RequestParamsEnum.TITLE.value],
@@ -179,8 +187,10 @@ class HandleRequest:
                 log_error.logger.error("上传的文件路径不存在:{}".format(file_path))
                 raise FileNotFoundError("上传的文件路径不存在:{}".format(file_path))
 
-        # 解析上传的文件
+        # 2.解析上传的文件
         multipart = MultipartEncoder(fields=file_data, boundary=uuid.uuid4())
+
+        # 3.重新定义content_type
         if headers is None:
             headers = {}
         headers['Content-Type'] = multipart.content_type
@@ -216,12 +226,10 @@ class HandleRequest:
         :param res:
         :return:
         """
-
         file_path = os.path.join(HandlePath.FILES_DIR, cls.get_export_api_filename(res))
         if res.status_code == 200:
             if res.text:
                 with open(file_path, 'wb') as fp:
-                    # iter_content循环读取信息写入，chunk_size设置文件大小
                     for chunk in res.iter_content(chunk_size=1):
                         fp.write(chunk)
             else:
@@ -288,11 +296,13 @@ class HandleRequest:
         :return:
         """
         _headers = {}
+        # 1.获取额外头部
         _headers.update(eval(conf.get('env', 'headers')))
-        # 处理局部token配置
+        # 2.处理局部token配置
         if is_token is False:
             return _headers
 
+        # 3.处理全局token配置
         _is_token = conf.getboolean('token', 'is_token')
         if _is_token:
             item = conf.options("token")
@@ -300,3 +310,4 @@ class HandleRequest:
             _headers.update(token)
 
         return _headers
+

@@ -7,26 +7,21 @@
 import pytest
 from utils.handler_auto_code.auto_code_control import AutomaticGenerationTestCase
 from utils.handler_conf.conf_control import conf
-from utils.handler_path.path_contr import HandlePath
 from utils.handler_inform.send_inform import send_inform
-from utils.handler_other.common import delete_file
 
 
 def cmd():
-    # 1.清空所有缓存文件
-    delete_file(HandlePath.CACHE_DIR)
-
-    # 2.处理未生成代码的测试用例如
+    # 1.处理未生成代码的测试用例如
     AutomaticGenerationTestCase().automatic_code()
 
-    # 3.执行程序
-    pytest.main(['-s', '-W','ignore:Module already imported:pytest.PytestWarning',
-        '--report=report.html',
-        f'--title={conf.get("other", "project_name")}测试报告',
-        f'--tester={conf.get("other", "author")}',
-        '--desc=报告描述信息',
-        '--template=2'
-        ])
+    # 2.执行程序
+    pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning',
+                 '--report=report.html',
+                 f'--title={conf.get("other", "project_name")}测试报告',
+                 f'--tester={conf.get("other", "author")}',
+                 '--desc=报告描述信息',
+                 '--template=2'
+                 ])
 
     """
     --reruns: 失败重跑次数

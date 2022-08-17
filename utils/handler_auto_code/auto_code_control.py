@@ -7,6 +7,7 @@ import os
 from utils.handler_path.path_contr import HandlePath
 from utils.handler_auto_code.case_template import write_testcase_file
 from utils.handler_other.common import get_os_sep, get_case_files
+from utils.handler_yaml.yaml_control import HandleYaml
 
 
 class AutomaticGenerationTestCase:
@@ -20,14 +21,18 @@ class AutomaticGenerationTestCase:
         :return:
         """
         file_path_list = get_case_files(data_dir=HandlePath.DATA_DIR, filter_yaml=True)
+
         for file_path in file_path_list:
             if 'proxy_data.yaml' not in file_path:
+                # 生成test_case路径
                 self.mk_dir(file_path)
+                case_data = HandleYaml.read_yaml(file_path)
+                # 提取至模板中
                 write_testcase_file(
-                    class_title=self.get_test_class_title(file_path),
-                    func_title=self.func_title(file_path),
+                    class_name=self.get_test_class_name(file_path),
+                    func_name=self.get_test_func_name(file_path),
+                    case_ids=self.get_case_ids(case_data),
                     case_path=self.get_case_path(file_path)[0],
-                    yaml_path=self.yaml_path(file_path),
                     file_name=self.get_case_path(file_path)[1])
 
     def mk_dir(self, file_path: str) -> None:
@@ -60,17 +65,18 @@ class AutomaticGenerationTestCase:
         :param file_path: yaml 文件路径
         :return:  示例： DateDemo.py
         """
-
+        # 1.提取"data_dir"目录的路径长度
         num = len(HandlePath.DATA_DIR)
         yaml_path = file_path[num:]
         file_name = None
+        # 路径转换
         if '.yaml' in yaml_path:
             file_name = yaml_path.replace('.yaml', '.py')
         elif '.yml' in yaml_path:
             file_name = yaml_path.replace('.yml', '.py')
         return file_name
 
-    def get_test_class_title(self, file_path: str) -> str:
+    def get_test_class_name(self, file_path: str) -> str:
         """
         自动生成类名称
         :param file_path:
@@ -87,7 +93,7 @@ class AutomaticGenerationTestCase:
 
         return _class_name
 
-    def func_title(self, file_path: str) -> str:
+    def get_test_func_name(self, file_path: str) -> str:
         """
         函数名称
         :param file_path: yaml 用例路径
@@ -97,18 +103,15 @@ class AutomaticGenerationTestCase:
         _file_name = os.path.split(self.get_file_name(file_path))[1][:-3]
         return _file_name
 
-    def yaml_path(self, file_path: str) -> str:
+    def get_case_ids(self, case_data):
         """
-        生成动态 yaml 路径, 主要处理业务分层场景
-        :param file_path: 如业务有多个层级, 则获取到每一层/test_demo/DateDemo.py
-        :return: Login/common.yaml
+        获取所有的用例 ID
+        :param case_data:
+        :return:
         """
-        i = len(HandlePath.DATA_DIR)
+        return [key for key in case_data.keys()]
 
-        # 兼容 linux 和 window 操作路径
-        yaml_path = file_path[i:].replace("\\", "/")
 
-        return yaml_path
 
     @classmethod
     def error_message(cls, param_name, file_path):
@@ -124,4 +127,3 @@ class AutomaticGenerationTestCase:
 
 if __name__ == '__main__':
     AutomaticGenerationTestCase().automatic_code()
-

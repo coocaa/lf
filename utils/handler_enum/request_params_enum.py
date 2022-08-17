@@ -40,9 +40,6 @@ class RequestParamsEnum(Enum):
     # sql内容
     SQL = 'sql'
 
-    # 当前请求用例设置缓存
-    SET_API_CACHE = "set_api_cache"
-
     # 前置sql
     SETUP_SQL = 'setup_sql'
     # 后置sql
@@ -51,11 +48,11 @@ class RequestParamsEnum(Enum):
     # 后置清除
     TEARDOWN_CASE = "teardown_case"
 
-
+    # 单独判断状态码
     STATUS_CODE = "status_code"
 
     # 设置等待时间
     SLEEP = 'sleep'
 
-    # 缓存数据存放
-    RESPONSE_CACHE = 'response_cache'
+    # # 缓存数据存放
+    # RESPONSE_CACHE = 'response_cache'

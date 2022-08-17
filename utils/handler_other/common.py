@@ -7,7 +7,6 @@ import types
 import socket
 from typing import Dict, Callable
 
-from utils.handler_path.path_contr import HandlePath
 
 
 def get_case_files(data_dir, filter_yaml=True) -> list:
@@ -19,7 +18,7 @@ def get_case_files(data_dir, filter_yaml=True) -> list:
     """
     filenames = []
 
-
+    # 获取data目录下的子文件
     for base, dirs, files in os.walk(data_dir):
         for file_path in files:
             last_path = os.path.join(base, file_path)
@@ -51,20 +50,6 @@ def load_module_func(module) -> Dict[str, Callable]:
     return funcs
 
 
-def get_report_html():
-    """
-    获取本地的html文件路径
-    :return:
-    """
-    _s = None
-    try:
-        _s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        _s.connect(('8.8.8.8', 80))
-        l_host = _s.getsockname()[0]
-    finally:
-        _s.close()
-
-    return l_host
 
 
 def delete_file(path):
@@ -87,9 +72,11 @@ def get_expect_result(assert_data:dict):
     expect_result={}
     if assert_data:
         i=0
+        # 遍历第一层
         for name,item in assert_data.items():
             data = {}
             i += 1
+            # 遍历第二层
             for key, value in item.items():
                 if key == 'assert_type':
                     data[value] = key
@@ -98,6 +85,22 @@ def get_expect_result(assert_data:dict):
                         data[item.get('assert_type')] = value
                     else:
                         data[key] = value
+
             expect_result['断言'+str(i)] = data
 
     return expect_result
+
+def get_report_html():
+    """
+    获取本地的html文件路径
+    :return:
+    """
+    _s = None
+    try:
+        _s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        _s.connect(('8.8.8.8', 80))
+        l_host = _s.getsockname()[0]
+    finally:
+        _s.close()
+
+    return l_host

@@ -7,8 +7,8 @@
 
 import datetime
 import decimal
-from warnings import filterwarnings
 import pymysql
+from warnings import filterwarnings
 from typing import List, Union, Dict
 from utils.handler_conf.conf_control import conf
 from utils.handler_conf.get_conf_data import db_status
@@ -31,7 +31,7 @@ class HandleMysql:
                     user=conf.get('mysql', 'user'),
                     password=conf.get('mysql', 'password'),
                     database=conf.get('mysql', 'database'),
-                    cursor=pymysql.cursors.DictCursor,
+                    cursor=pymysql.cursors.DictCursor,  # 字典游标
                     charset='utf8')
 
                 self.cur = self.connect.cursor()
@@ -39,6 +39,7 @@ class HandleMysql:
                 log_error.logger.error("数据库连接失败, 失败原因: {e}".format(e))
 
         def __del__(self):
+            # 清理对象
             try:
                 self.cur.close()
                 self.connect.close()
@@ -60,7 +61,6 @@ class HandleMysql:
 
             except AttributeError as e:
                 log_error.logger.error("数据库执行sql异常, 失败原因: {e}".format(e))
-                # 如果事务异常，则回滚数据
                 self.connect.rollback()
                 raise
 
@@ -81,6 +81,7 @@ class SetupMysql(HandleMysql):
             if db_status():
                 if sql_list:
                     for item in sql_list:
+                        # 判断sql是查询
                         if item[0:6].upper() == 'SELECT':
                             sql_data = self.query(sql=item)[0]
                             for key, value in sql_data.items():
@@ -92,8 +93,9 @@ class SetupMysql(HandleMysql):
             return result
 
         except IndexError as e:
-            log_error.logger.error(f"sql语句执行失败，请检查setup_sql语句是否正确:{sql_list}")
-            raise ValueError(f"sql语句执行失败，请检查setup_sql语句是否正确:{sql_list}") from e
+            msg = f"sql语句执行失败，请检查setup_sql语句是否正确:{sql_list}"
+            log_error.logger.error(msg)
+            raise ValueError(msg) from e
 
 
 class ExecutionAssert(HandleMysql):
@@ -112,7 +114,6 @@ class ExecutionAssert(HandleMysql):
             if isinstance(sql, list):
                 data = {}
                 sql_type = ['UPDATE', 'update', 'DELETE', 'delete', 'INSERT', 'insert']
-
                 if any(i in sql for i in sql_type) is False:
                     for item in sql:
                         sql = sql_regular(item, res_data)

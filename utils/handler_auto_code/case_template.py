@@ -7,7 +7,7 @@ import datetime
 from utils.handler_conf.conf_control import conf
 
 
-def write_case(case_path, page):
+def write_case(case_path, code_page):
     """
     写入用例代码
     :param case_path:
@@ -15,45 +15,42 @@ def write_case(case_path, page):
     :return:
     """
     with open(case_path, 'w', encoding="utf-8") as file:
-        file.write(page)
+        file.write(code_page)
 
 
-def write_testcase_file(class_title, func_title, case_path, yaml_path, file_name):
+def write_testcase_file(class_name, func_name, case_ids, case_path, file_name):
     """
-    生成用例模板代码
-    :param allure_story:
-    :param file_name: 文件名称
-    :param allure_epic: 项目名称
-    :param allure_feature: 模块名称
-    :param class_title: 类名称
-    :param func_title: 函数名称
+    :param class_name: 类名
+    :param func_name: 函数名
+    :param case_ids: 测试用例id
     :param case_path: case 路径
-    :param yaml_path: yaml 文件路径
+    :param file_name: 代码文件名
     :return:
     """
+
     author = conf.get('other', 'author')
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     update_case_status = conf.getboolean('other', 'update_case')
 
-    page = f'''#!/usr/bin/env python
+    code_page = f'''#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : {now}
 # @Author : {author}
 import pytest
-from utils.handler_path.path_contr import HandlePath
+from utils.handler_cache.cache_control import HandleCache
 from utils.handler_assert.assert_control import HandleAssert
-from utils.handler_yaml.yaml_analysis import AnalysisYamlData
 from utils.handler_request.request_control import HandleRequest
 from utils.handler_request.teardown_control import HandlerTeardown
 
-TestData = AnalysisYamlData(HandlePath.DATA_DIR + r'{yaml_path}').analysis()
 
+case_ids = {case_ids}
+TestData = HandleCache.get_case_data(case_ids)
 
-class Test{class_title}:
+class Test{class_name}:
 
 
     @pytest.mark.parametrize('case_item', TestData)
-    def test_{func_title}(self, case_item):
+    def test_{func_name}(self, case_item):
         """
         :param :
         :return:
@@ -70,9 +67,9 @@ if __name__ == '__main__':
 '''
 
     if update_case_status:
-        write_case(case_path=case_path, page=page)
+        write_case(case_path=case_path, code_page=code_page)
     elif update_case_status is False:
         if not os.path.exists(case_path):
-            write_case(case_path=case_path, page=page)
+            write_case(case_path=case_path, code_page=code_page)
     else:
         raise ValueError("配置文件中的:update_case配置不正确,只能配置 True 或者 False")

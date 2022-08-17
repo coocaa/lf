@@ -48,18 +48,15 @@ class HandlePath:
     LOG_DIR = get_path('logs$')
     # 4.配置文件路径
     CONF_PATH = get_path('conf$config.ini')
-    # 5.缓存文件路径
-    CACHE_DIR = get_path('cache$')
-    if not os.path.exists(CACHE_DIR):
-        os.mkdir(CACHE_DIR)
 
-    # 6.测试上传文件路径
+
+    # 5.测试上传文件路径
     FILES_DIR = get_path('files$')
 
-    # 7.测试报告路径
+    # 6.测试报告路径
     REPORT_DIR = get_path('reports$')
 
-    # 8.日志文件路径
+    # 7.日志文件路径
     log_info_path = generate_log_path(f'{now_date()}--info.log')
     log_error_path = generate_log_path(f'{now_date()}--error.log')
     log_warning_path = generate_log_path(f'{now_date()}--warning.log')

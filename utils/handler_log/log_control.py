@@ -35,10 +35,10 @@ class HandlerLog:
         time_rotating = handlers.TimedRotatingFileHandler(filename=filename, when=when, backupCount=3, encoding='utf-8')
         time_rotating.setFormatter(format_str)  # 设置文件的写入格式
 
-        # 把日志处理器对象加到logger里
+
         self.logger.addHandler(screen_output)
         self.logger.addHandler(time_rotating)
-        # self.log_path = HandlePath.LOG_DIR
+
 
     def log_color(self):
         """ 设置日志颜色 """
