@@ -37,7 +37,7 @@ class FlyBookSend:
     def __init__(self, report_data: dict):
         self.report_data = report_data
         # 获取钉钉配置信息
-        self.project_name = conf.get('other', 'projectName')
+        self.project_name = conf.get('other', 'project_name')
         self.test_name = conf.get('other', 'author')
         self.env_name = conf.get('other', 'env')
         self.webhook = conf.get('FlyBook', 'webhook')

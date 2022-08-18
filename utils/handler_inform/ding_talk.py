@@ -47,8 +47,8 @@ class DingTalkSend:
         if self.report_data['fail'] + self.report_data['error'] > 0:
             is_at_all = True
 
-        text = f"#### {conf.get('other', 'projectName')}自动化通知  " \
-               f"\n\n>Python脚本任务: {conf.get('other', 'projectName')}" \
+        text = f"#### {conf.get('other', 'project_name')}自动化通知  " \
+               f"\n\n>Python脚本任务: {conf.get('other', 'project_name')}" \
                f"\n\n>环境: {conf.get('other', 'env')}\n\n>" \
                f"执行人: {conf.get('other', 'author')}" \
                f"\n\n>执行结果: {self.report_data['pass_rate']}% " \
