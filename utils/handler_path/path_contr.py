@@ -37,8 +37,6 @@ def generate_log_path(filename):
     return os.path.join(log_dir, filename)
 
 
-
-
 class HandlePath:
     # 1.测试用例路径
     CASE_DIR = get_path('test_case$')
@@ -46,9 +44,10 @@ class HandlePath:
     DATA_DIR = get_path('data$')
     # 3.日志模块路径
     LOG_DIR = get_path('logs$')
+    if not os.path.exists(LOG_DIR):
+        os.mkdir(LOG_DIR)
     # 4.配置文件路径
     CONF_PATH = get_path('conf$config.ini')
-
 
     # 5.测试上传文件路径
     FILES_DIR = get_path('files$')
