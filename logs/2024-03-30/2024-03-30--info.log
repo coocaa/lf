@@ -1,0 +1,19 @@
+2024-03-30 15:05:48,249 log_decorator.py[line:36]-[INFO]: 
+===========================================================
+用例标题: 用户正常登录
+请求路径: http://api.lemonban.com/futureloan/member/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Length': '46'}
+请求内容: {'json': {'mobile_phone': 13125007780, 'pwd': 12345678}}
+响应内容: {"code":1001,"msg":"账号信息错误","data":null,"copyright":"Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved"}
+预期结果: {}
+接口响应时长: 173.52 ms
+Http状态码: 200
+==========================================================
+2024-03-30 15:05:48,252 conftest.py[line:77]-[INFO]: 用例总数: 1
+2024-03-30 15:05:48,252 conftest.py[line:78]-[INFO]: 通过用例数: 1
+2024-03-30 15:05:48,253 conftest.py[line:79]-[ERROR]: 异常用例数: 0
+2024-03-30 15:05:48,253 conftest.py[line:80]-[ERROR]: 失败用例数: 0
+2024-03-30 15:05:48,253 conftest.py[line:81]-[WARNING]: 跳过用例数: 0
+2024-03-30 15:05:48,253 conftest.py[line:82]-[INFO]: 用例执行时长: 0.75 s
+2024-03-30 15:05:48,253 conftest.py[line:86]-[INFO]: 用例成功率: 100.00 %

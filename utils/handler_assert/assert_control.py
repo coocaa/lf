@@ -79,7 +79,7 @@ class HandleAssert:
         :param assert_type: Union[str, None] 断言的类型是response 还是sql
         :param sql_data:    Union[str, None] sql
         :param assert_method:    断言方法
-        :param expect_value_expr: Any,预期结果表达式
+        :param expect_value_expr:   预期结果表达式
         :param item: 断言具体内容信息
         :param resp_data: jsonpath 提取的接口响应数据
         :param res_info: 响应全部内容
